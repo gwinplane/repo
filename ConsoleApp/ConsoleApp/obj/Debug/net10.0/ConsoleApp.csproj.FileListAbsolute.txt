@@ -12,3 +12,4 @@ C:\Users\marin\source\repos\ConsoleApp\ConsoleApp\obj\Debug\net10.0\refint\Conso
 C:\Users\marin\source\repos\ConsoleApp\ConsoleApp\obj\Debug\net10.0\ConsoleApp.pdb
 C:\Users\marin\source\repos\ConsoleApp\ConsoleApp\obj\Debug\net10.0\ConsoleApp.genruntimeconfig.cache
 C:\Users\marin\source\repos\ConsoleApp\ConsoleApp\obj\Debug\net10.0\ref\ConsoleApp.dll
+C:\Users\marin\source\repos\ConsoleApp\ConsoleApp\obj\Debug\net10.0\ConsoleApp.sourcelink.json
