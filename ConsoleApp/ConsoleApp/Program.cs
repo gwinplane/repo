@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Lessons
 {
@@ -11,33 +7,34 @@ namespace Lessons
     {
        static void Main(string[] args)
         {
-            Console.WriteLine("Name des Helden");
-            string name = Console.ReadLine();
-            Console.WriteLine($"Hallo, {name}!");
+            Console.WriteLine("Gib die erste Zahl ein:");
+            int zahl1;
+            bool ok1 = int.TryParse(Console.ReadLine(), out zahl1);
 
-            Console.WriteLine("Magischer Gegenstand");
-            string gegenstand = Console.ReadLine();
-            Console.WriteLine($"Dein Gegenstand ist {gegenstand}!");
+            if (ok1)
+            {
+                Console.WriteLine($"Sie haben {zahl1} eingegeben");
+            }
+            else
+            {
+                Console.WriteLine("Das ist nicht Zahl!");
+            }
+            Console.WriteLine("Gib die zweite Zahl ein:");
+            int zahl2;
+            bool ok2 = int.TryParse(Console.ReadLine(), out zahl2);
 
-            Console.WriteLine("Was ist dein Ort?");
-            string ort = Console.ReadLine();
-            Console.WriteLine($"Dein Ort ist {ort}!");
-
-      
-            Console.WriteLine();
-            Console.WriteLine();
-
-            Console.WriteLine("=== DEIN FRAGEBOGEN ===");
-            Console.WriteLine($"Name des Helden: {name}");
-            Console.WriteLine();
-            Console.WriteLine($"Magischer Gegenstand: {gegenstand}");
-            Console.WriteLine();
-            Console.WriteLine($"Ort: {ort}");
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine($"Eines Tages fand {name} einen {gegenstand}.");
-            Console.WriteLine($"Mit diesem Gegenstand ging er zum {ort}.");
-            Console.WriteLine($"Dort begann ein unglaubliches Abenteuer!");
+            if (ok2)
+            {
+                Console.WriteLine($"Sie haben {zahl2} eingegeben");
+            }
+            else
+            {
+                Console.WriteLine("Das ist nicht Zahl!");
+            }
+            
+            Console.WriteLine("=== ERGEBNISSE ===");
+            Console.WriteLine($"{zahl1} + {zahl2} = {zahl1+ zahl2}");
+            
 
 
             Console.ReadLine();
