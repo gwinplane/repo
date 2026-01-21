@@ -7,34 +7,19 @@ namespace Lessons
     {
        static void Main(string[] args)
         {
-            Console.WriteLine("Gib die erste Zahl ein:");
-            int zahl1;
-            bool ok1 = int.TryParse(Console.ReadLine(), out zahl1);
+            Console.WriteLine("Note1:");
+            double note1 = double.Parse(Console.ReadLine());
+            Console.WriteLine("Note2:");
+            double note2 = double.Parse(Console.ReadLine());
+            Console.WriteLine("Note3:");
+            double note3 = double.Parse(Console.ReadLine());
 
-            if (ok1)
-            {
-                Console.WriteLine($"Sie haben {zahl1} eingegeben");
-            }
-            else
-            {
-                Console.WriteLine("Das ist nicht Zahl!");
-            }
-            Console.WriteLine("Gib die zweite Zahl ein:");
-            int zahl2;
-            bool ok2 = int.TryParse(Console.ReadLine(), out zahl2);
+            //double durchschnitt = (note1 + note2 + note3) / 3;
+            //Console.WriteLine($"Durchschnitt: {durchschnitt}");
 
-            if (ok2)
-            {
-                Console.WriteLine($"Sie haben {zahl2} eingegeben");
-            }
-            else
-            {
-                Console.WriteLine("Das ist nicht Zahl!");
-            }
-            
-            Console.WriteLine("=== ERGEBNISSE ===");
-            Console.WriteLine($"{zahl1} + {zahl2} = {zahl1+ zahl2}");
-            
+            //Console.WriteLine($"Durchschnitt: {(note1+note2+note3)/3}");
+            Console.WriteLine($"Durchschnitt: {Math.Round((note1 + note2 + note3) / 3, 2)}");
+
 
 
             Console.ReadLine();
