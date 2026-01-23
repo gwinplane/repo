@@ -9,25 +9,16 @@ namespace Lessons
         {
 
 
-            Console.WriteLine("Wie alt bist du?");
+            Console.WriteLine("Gib eine Zahl ein");
+            int zahl = int.Parse(Console.ReadLine());
 
-            int age = int.Parse(Console.ReadLine());
-
-            if (age < 12)
+            if (zahl % 2 == 0)
             {
-                Console.WriteLine("Du bist ein Kind");
+                Console.WriteLine($"Die Zahl {zahl} ist gerade");
             }
-            else if (age >= 12 && age <= 17)
+            else
             {
-                Console.WriteLine("Du bist ein Jugendlicher");// твой код
-            }
-            else if (age >= 18 && age <= 64)
-            {
-                Console.WriteLine("Du bist ein Erwachsener");// твой код
-            }
-            else (age >= 65)
-            {
-                Console.WriteLine("Du bist ein Rentner");// твой код
+                Console.WriteLine($"Die Zahl {zahl} ist ungerade");// твой код
             }
 
 
