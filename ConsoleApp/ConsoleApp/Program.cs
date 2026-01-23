@@ -7,30 +7,30 @@ namespace Lessons
     {
        static void Main(string[] args)
         {
-            Console.WriteLine("Betrag in EUR:");
-
-            double eur;
-            if (!double.TryParse(Console.ReadLine(), out eur))
+            Console.WriteLine("Preis pro Stück:");
+            double preis;
+            if (!double.TryParse(Console.ReadLine(), out preis))
             {
                 Console.WriteLine("Das ist keine Zahl!");
                 return;
             }
 
-            double kurs = 1.10;
-            double usd = eur * kurs;
+            Console.WriteLine("Anzahl:");
+            int anzahl;
+            if (!int.TryParse(Console.ReadLine(), out anzahl))
+            {
+                Console.WriteLine("Das ist keine Zahl!");
+                return;
+            }
 
-            Console.WriteLine($"{eur} EUR = {usd} USD");
-            Console.WriteLine($"{eur} EUR = {Math.Round(usd, 2)} USD");
-            
+            double summe = preis * anzahl;
+            double steuer = summe * 0.19;      // 19% налог
+            double gesamt = summe + steuer;    // Общая сумма
+
             Console.WriteLine();
-            Console.WriteLine("Oder umgekehrt:");
-            Console.WriteLine("Betrag in USD:");
-            double usd2 = double.Parse(Console.ReadLine());
-
-            double eur2 = usd2 / kurs;
-            Console.WriteLine($"{usd2} USD = {eur2} EUR");
-            Console.WriteLine($"{usd2} USD = {Math.Round(eur2, 2)} EUR");
-
+            Console.WriteLine($"Summe: {Math.Round(summe, 2)} EUR");
+            Console.WriteLine($"Steuer (19%): {Math.Round(steuer, 2)} EUR");
+            Console.WriteLine($"Gesamt: {Math.Round(gesamt, 2)} EUR");
 
 
             Console.ReadLine();
