@@ -19,6 +19,7 @@ namespace Lessons
             else
             {
                 Console.WriteLine($"Die Zahl {zahl} ist ungerade");// твой код
+                Console.WriteLine($"Die Zahl {zahl} ist ungerade");// твой код
             }
 
 
