@@ -9,37 +9,58 @@ namespace Lessons
         {
 
 
-            Console.WriteLine("Geben Sie die Punkte ein:");
-            int punkte;
+            Console.WriteLine("Erste Zahl:");
+            double a;
 
-            if (!int.TryParse(Console.ReadLine(), out punkte))
+            if (!double.TryParse(Console.ReadLine(), out a))
                 {
                     Console.WriteLine("Das ist keine Zahl!");
                     return;
                 }
+            Console.WriteLine("Zweite Zahl:");
+
+            double b;
+
+            if (!double.TryParse(Console.ReadLine(), out b))
+            {
+                Console.WriteLine("Das ist keine Zahl!");
+                return;
+            }
+
+            Console.WriteLine("Waehlen Sie die Operation ein:");
+            string op = Console.ReadLine();
 
 
 
-            if (punkte >= 90)
+            if (op == "+") 
             {
-                Console.WriteLine("Note: Sehr gut (1)");
+                Console.WriteLine($"{a} + {b} = {a + b}");
             }
-            else if (punkte >= 75)
+            else if (op == "-")
             {
-                Console.WriteLine("Note: Gut (2)");
+                Console.WriteLine($"{a} - {b} = {a - b}");// твой код
             }
-            else if (punkte >= 60)
+            else if (op == "*")
             {
-                Console.WriteLine("Note: Befriedigend (3)");
+                Console.WriteLine($"{a} * {b} = {a * b}");// твой код
             }
-            else if (punkte >= 50)
+            else if (op == "/")
             {
-                Console.WriteLine("Note: Ausreichend (4)");
+                if (b == 0)
+                {
+                    Console.WriteLine("Fehler: Division durch Null!");
+                }
+                else
+                {
+                    Console.WriteLine($"{a} / {b} = {a / b}");
+                }
             }
             else
-                {
-                    Console.WriteLine("Note: Nicht bestanden (5)");
-                }
+            {
+                Console.WriteLine("Unbekannte Operation!");
+            }
+
+
 
 
 
