@@ -9,36 +9,37 @@ namespace Lessons
         {
 
 
-            Console.WriteLine("Erste Zahl");
-            int a;
+            Console.WriteLine("Geben Sie die Punkte ein:");
+            int punkte;
 
-            if (!int.TryParse(Console.ReadLine(), out a))
+            if (!int.TryParse(Console.ReadLine(), out punkte))
+                {
+                    Console.WriteLine("Das ist keine Zahl!");
+                    return;
+                }
+
+
+
+            if (punkte >= 90)
             {
-                Console.WriteLine("Das ist keine Zahl!");
-                return;
+                Console.WriteLine("Note: Sehr gut (1)");
             }
-
-            Console.WriteLine("Zweite Zahl");
-            int b;
-
-            if (!int.TryParse(Console.ReadLine(), out b))
+            else if (punkte >= 75)
             {
-                Console.WriteLine("Das ist keine Zahl!");
-                return;
+                Console.WriteLine("Note: Gut (2)");
             }
-
-            if (a > b)
+            else if (punkte >= 60)
             {
-                Console.WriteLine($"{a} ist groesser als {b}");
+                Console.WriteLine("Note: Befriedigend (3)");
             }
-            else if (a < b)
+            else if (punkte >= 50)
             {
-                Console.WriteLine($"{b} ist groesser als {a}");// твой код
+                Console.WriteLine("Note: Ausreichend (4)");
             }
             else
-            {
-                Console.WriteLine($"{a} ist gleich {b}");// твой код для равенства
-            }
+                {
+                    Console.WriteLine("Note: Nicht bestanden (5)");
+                }
 
 
 
