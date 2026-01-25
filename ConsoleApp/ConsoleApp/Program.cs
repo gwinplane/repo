@@ -9,31 +9,43 @@ namespace Lessons
         {
 
 
-            Console.WriteLine("Gib eine Zahl ein");
-            int zahl = int.Parse(Console.ReadLine());
+            Console.WriteLine("Erste Zahl");
+            int a;
 
-                    if (zahl > 0)
-                    {
-                        Console.WriteLine($"Positive Zahl");
+            if (!int.TryParse(Console.ReadLine(), out a))
+            {
+                Console.WriteLine("Das ist keine Zahl!");
+                return;
+            }
 
-                    }
+            Console.WriteLine("Zweite Zahl");
+            int b;
+
+            if (!int.TryParse(Console.ReadLine(), out b))
+            {
+                Console.WriteLine("Das ist keine Zahl!");
+                return;
+            }
+
+            if (a > b)
+            {
+                Console.WriteLine($"{a} ist groesser als {b}");
+            }
+            else if (a < b)
+            {
+                Console.WriteLine($"{b} ist groesser als {a}");// твой код
+            }
+            else
+            {
+                Console.WriteLine($"{a} ist gleich {b}");// твой код для равенства
+            }
 
 
-                    else if (zahl < 0) 
-                    {
-                        Console.WriteLine($"Negative Zahl");
-                    }
-
-                    else 
-                    {
-                        Console.WriteLine($"Null");
-                    }
 
 
 
 
-
-                    Console.ReadLine();
+            Console.ReadLine();
 
         }
 
