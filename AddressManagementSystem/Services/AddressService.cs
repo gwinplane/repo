@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Address_Management_System__Console_App_.Data
+namespace AddressManagementSystem.Services
 {
     internal class Class1
     {
