@@ -53,5 +53,20 @@ namespace AddressManagementSystem.Services
             }
             return addresses;
         }
+
+        // DELETE
+        public void DeleteAddress(int id)
+        {
+            using var conn = _db.GetConnection();
+            conn.Open();
+
+            string query = "DELETE FROM addresses WHERE id = @id";
+            var cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            cmd.ExecuteNonQuery();
+        }
+
+
     }
 }

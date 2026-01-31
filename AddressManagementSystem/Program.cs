@@ -14,6 +14,7 @@ namespace AddressManagementSystem
             {
                 Console.WriteLine("1. Add address");
                 Console.WriteLine("2. View all addresses");
+                Console.WriteLine("3. Delete address");
                 Console.WriteLine("0. Exit");
                 Console.Write("Choose an option: ");
                 string choice = Console.ReadLine();
@@ -48,6 +49,34 @@ namespace AddressManagementSystem
                         Console.WriteLine($"{addr.Id}: {addr.Street}, {addr.HouseNumber}, {addr.PostalCode}, {addr.City}, {addr.Country}");
                     }
                     Console.WriteLine();
+                }
+                else if (choice == "3")  // ← НОВЫЙ БЛОК!
+                {
+                    var addresses = service.GetAllAddresses();
+
+                    if (addresses.Count == 0)
+                    {
+                        Console.WriteLine("No addresses available!\n");
+                    }
+                    else
+                    {
+                        Console.WriteLine("\n=== ALL ADDRESSES ===");
+                        foreach (var addr in addresses)
+                        {
+                            Console.WriteLine($"{addr.Id}: {addr.Street}, {addr.HouseNumber}, {addr.City}");
+                        }
+
+                        Console.Write("\nEnter the ID to delete: ");
+                        if (int.TryParse(Console.ReadLine(), out int id))
+                        {
+                            service.DeleteAddress(id);
+                            Console.WriteLine("Address deleted!\n");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid ID!\n");
+                        }
+                    }
                 }
                 else if (choice == "0")
                 {
