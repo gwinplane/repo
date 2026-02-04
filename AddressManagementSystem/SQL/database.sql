@@ -9,3 +9,7 @@ CREATE TABLE addresses (
     city VARCHAR(100),
     country VARCHAR(100)
 );
+
+ALTER TABLE addresses
+ADD CONSTRAINT uq_address
+UNIQUE (street, house_number);

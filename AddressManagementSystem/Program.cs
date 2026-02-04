@@ -38,8 +38,16 @@ namespace AddressManagementSystem
                         City = city,
                         Country = country
                     };
-                    service.AddAddress(address);
-                    Console.WriteLine("Address added!\n");
+                    bool success = service.AddAddress(address);
+                    if (success)
+                    {
+                        Console.WriteLine("Address added successfully!\n");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Address could not be added!\n");
+                    }
+                    
                 }
                 else if (choice == "2")
                 {
@@ -50,7 +58,7 @@ namespace AddressManagementSystem
                     }
                     Console.WriteLine();
                 }
-                else if (choice == "3")  // ← НОВЫЙ БЛОК!
+                else if (choice == "3")  
                 {
                     var addresses = service.GetAllAddresses();
 
